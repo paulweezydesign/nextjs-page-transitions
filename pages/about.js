@@ -1,25 +1,25 @@
-import { useState, useEffect } from 'react'
-import PropTypes from 'prop-types'
-import Link from 'next/link'
+import { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
+import Link from 'next/link';
 
 const About = (props) => {
-  const [loaded, setLoaded] = useState(false)
-  const { pageTransitionReadyToEnter } = props
+  const [loaded, setLoaded] = useState(false);
+  const { pageTransitionReadyToEnter } = props;
 
   useEffect(() => {
     const timeoutId = setTimeout(() => {
-      pageTransitionReadyToEnter()
-      setLoaded(true)
-    }, 2000)
+      pageTransitionReadyToEnter();
+      setLoaded(true);
+    }, 2000);
     return () => {
-      clearTimeout(timeoutId)
-    }
-  }, [pageTransitionReadyToEnter])
+      clearTimeout(timeoutId);
+    };
+  }, [pageTransitionReadyToEnter]);
 
-  if (!loaded) return null
+  if (!loaded) return null;
 
   return (
-    <div className="container bg-success page">
+    <div className="container bg-black/90 text-white/90 page">
       <h1>About us</h1>
       <p>
         Notice how a loading spinner showed up while my content was "loading"?
@@ -29,17 +29,17 @@ const About = (props) => {
         <a className="btn btn-light">Go back home</a>
       </Link>
     </div>
-  )
-}
+  );
+};
 
 About.propTypes = {
   pageTransitionReadyToEnter: PropTypes.func,
-}
+};
 
 About.defaultProps = {
   pageTransitionReadyToEnter: () => {},
-}
+};
 
-About.pageTransitionDelayEnter = true
+About.pageTransitionDelayEnter = true;
 
-export default About
+export default About;
