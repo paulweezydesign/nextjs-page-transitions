@@ -14,11 +14,12 @@ export default class MyDocument extends Document {
           <style>{`
             .page {
               height: 100vh;
+              width: 100vw;
             }
           `}</style>
         </Head>
         <body>
-          <Main />
+          <Main className="page h-screen w-screen" />
           <NextScript />
         </body>
       </Html>

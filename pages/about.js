@@ -19,7 +19,7 @@ const About = (props) => {
   if (!loaded) return null;
 
   return (
-    <div className="container bg-black/90 text-white/90 page">
+    <div className=" bg-black/90 text-white/90 page">
       <h1>About us</h1>
       <p>
         Notice how a loading spinner showed up while my content was "loading"?
